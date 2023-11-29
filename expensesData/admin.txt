@@ -5,5 +5,5 @@ Pen,22,6567aad032ac7
 Water,50,6567aae55dd7a
 Apple,10,6567af316e39e
 Bread,25,6567affbe75c8
-Spotify subscription,100,6567b0148e7cf
-Spotify subscription	Spotify subscription,123,6567b0266042e
+Apple,15,6567b70a9ba64
+Spotify subscription,100,6567b982f2a9d

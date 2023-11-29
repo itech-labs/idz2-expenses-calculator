@@ -10,7 +10,6 @@
     <title>Expense Calculator</title>
 </head>
 <body>
-    <!-- // TODO: check if username already exists -->
     <div class="container">
         <h1>Expense Calculator</h1>
         <?php
@@ -18,9 +17,7 @@
             
             if (isset($_SESSION['login'])) {
                 include('expenses.php');
-                // echo '<form action="logout.php" method="post">';
-                // echo '<button class="logout" type="submit">Logout</button>';
-                // echo '</form>';
+
             } else {
                 if (isset($_GET['action']) && $_GET['action'] == 'register') {
                     include('register.php');
