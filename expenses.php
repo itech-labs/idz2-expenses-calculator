@@ -6,8 +6,9 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $expense_name = $_POST['expense_name'];
         $expense_amount = $_POST['expense_amount'];
+        $expense_id = uniqid();
 
-        $data = "$expense_name,$expense_amount\n";
+        $data = "$expense_name,$expense_amount,$expense_id\n";
         $file_name = "expensesData\\{$_SESSION['login']}.txt";
 
         file_put_contents($file_name, $data, FILE_APPEND);
@@ -26,10 +27,11 @@
     
             foreach ($lines as $line) {
                 $expenseData = explode(',', $line);
-                if (count($expenseData) === 2) {
+                if (count($expenseData) === 3) {
                     $expenses[] = [
                         'name' => $expenseData[0],
-                        'amount' => $expenseData[1]
+                        'amount' => $expenseData[1],
+                        'id' => $expenseData[2]
                     ];
                 }
             }
@@ -70,13 +72,18 @@
                 echo "<h3>Total expenses: </h3>";
                 echo $totalAmount;
                 echo "<h3>List of expenses</h3>";
+
+                echo "<table>";
+                echo "<tr><th>Name</th><th>Amount</th><th>Action</th></tr>";
+
                 foreach ($expenses as $expense) {
-                    echo "<div>";
-                    echo "<span>{$expense['name']}: </span>";
-                    echo "<span>{$expense['amount']} </span>";
-                    echo "<a href='delete_expense.php?index=1' onclick='return confirm(\"Ви впевнені, що хочете видалити цю витрату?\")'>X</a>";
-                    echo "</div>";
+                    echo "<tr>";
+                    echo "<td>{$expense['name']}</td>";
+                    echo "<td>{$expense['amount']}</td>";
+                    echo "<td><a class='delete-link' href='delete_expense.php?id={$expense['id']}' onclick='return confirm(\"Are you sure you want to delete the expense: {$expense['name']}?\")'>X</a></td>";
+                    echo "</tr>";
                 }
+                echo "</table>";
                 echo "<br>";
             } else {
                 echo "<p>No expenses yet.</p>";

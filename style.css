@@ -91,18 +91,33 @@ a:hover {
     background-color: #cc0000;
 }
 
-.list a {
-    display: inline;
-    color: red;
-    margin: 5px;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.list div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    max-width: 240px;
 }
 
-.list span {
+th {
+    background-color: #f2f2f2;
+}
+
+th:last-child {
     text-align: center;
+}
+
+.delete-link {
+    color: red;
+    cursor: pointer;
+    margin: 0;
+}
+
+.delete-link:hover {
+    color: #cc0000;
 }

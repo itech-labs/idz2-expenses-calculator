@@ -1,25 +1,9 @@
-Apple,2
-Cake,10
-Meat,180
-Pen,5
-Apple,2
-Apple,2
-Apple,213
-Apple,123123
-Apple,213
-Apple,2
-Apple,21312
-Apple,213
-Apple,213123
-Apple,213213
-Apple,213123
-Pen,45
-Pen,23
-Apple,1
-Pen ,10
-Apple,21
-Apple,213
-Apple,12
-Apple,21323
-Pen,1
-Apple,33
+Cake,230,6567aa996c341
+Meat,150,6567aaa506a3d
+Phone,34999,6567aabe82a07
+Pen,22,6567aad032ac7
+Water,50,6567aae55dd7a
+Apple,10,6567af316e39e
+Bread,25,6567affbe75c8
+Spotify subscription,100,6567b0148e7cf
+Spotify subscription	Spotify subscription,123,6567b0266042e
