@@ -90,3 +90,19 @@ a:hover {
 .logout:hover {
     background-color: #cc0000;
 }
+
+.list a {
+    display: inline;
+    color: red;
+    margin: 5px;
+}
+
+.list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list span {
+    text-align: center;
+}

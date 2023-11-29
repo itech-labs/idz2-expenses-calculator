@@ -63,7 +63,7 @@
         <button type="submit">Add Expense</button>
     </form>
 
-    <div>
+    <div class="list">
         <?php
             include('logout.php');
             if (!empty($expenses)) {
@@ -74,6 +74,7 @@
                     echo "<div>";
                     echo "<span>{$expense['name']}: </span>";
                     echo "<span>{$expense['amount']} </span>";
+                    echo "<a href='delete_expense.php?index=1' onclick='return confirm(\"Ви впевнені, що хочете видалити цю витрату?\")'>X</a>";
                     echo "</div>";
                 }
                 echo "<br>";
