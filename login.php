@@ -2,7 +2,7 @@
     if (!isset($_SESSION)) {
         session_start();
     }
-    
+
     function getUsersData() {
         $file = 'users_data.txt';
     
