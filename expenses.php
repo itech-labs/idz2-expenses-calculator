@@ -57,24 +57,24 @@
 <div>
     <form action="expenses.php" method="post">
         <h3>Add Expense</h3>
-        <label for="expense_name">Expense Name:</label>
-        <input type="text" name="expense_name" id="expense_name" required>
-        <label for="expense_amount">Expense Amount:</label>
-        <input type="number" min="0" name="expense_amount" id="expense_amount" required>
+        <input type="text" name="expense_name" placeholder="Expense name" required>
+        <input type="number" min="0" name="expense_amount" placeholder="Expense amount" required>
         <button type="submit">Add Expense</button>
     </form>
-
-    <h3>List of expenses</h3>
+    <i class="fa-solid fa-right-from-bracket"></i>
     <div>
         <?php
             if (!empty($expenses)) {
+                echo "<h3>Total expenses: </h3>";
+                echo $totalAmount;
+                echo "<h3>List of expenses</h3>";
                 foreach ($expenses as $expense) {
                     echo "<div>";
                     echo "<span>{$expense['name']}: </span>";
                     echo "<span>{$expense['amount']} </span>";
                     echo "</div>";
                 }
-                echo "<br><p>Total expenses: {$totalAmount}</p>";
+                echo "<br>";
             } else {
                 echo "<p>No expenses yet.</p>";
             }

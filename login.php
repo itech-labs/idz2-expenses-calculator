@@ -54,9 +54,7 @@
             unset($_SESSION['tmpMessage']);
         }
     ?>
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
     <button type="submit">Login</button>
 </form>
