@@ -6,13 +6,13 @@
     <title>Expense Calculator</title>
 </head>
 <body>
-    // TODO: check if username already exists
+    <!-- // TODO: check if username already exists -->
     <h1>Expense Calculator</h1>
     <?php
         session_start();
         
         if (isset($_SESSION['login'])) {
-            // include('expenses.php');
+            include('expenses.php');
             echo '<form action="logout.php" method="post">';
             echo '<button type="submit">Logout</button>';
             echo '</form>';

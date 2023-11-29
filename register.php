@@ -2,14 +2,10 @@
     if (!isset($_SESSION)){
         session_start();
     }
-    
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
-
-        if (!file_exists('users_data.txt')) {
-            fopen('users_data.txt', 'w');
-        }
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $data = "$username,$hashed_password\n";
