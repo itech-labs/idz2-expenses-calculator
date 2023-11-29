@@ -17,3 +17,9 @@ Pen,45
 Pen,23
 Apple,1
 Pen ,10
+Apple,21
+Apple,213
+Apple,12
+Apple,21323
+Pen,1
+Apple,33

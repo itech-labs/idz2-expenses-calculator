@@ -1,9 +1,19 @@
 <?php
-    session_start();
+    if (!isset($_SESSION)){
+        session_start();
+    }
 
-    session_unset();
-
-    session_destroy();
-
-    header('Location: index.php');
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['logout']) && $_POST['logout'] == "true") {
+            session_unset();
+            session_destroy();
+            header('Location: index.php');
+        } 
+    }
+    
 ?>
+
+<form action="logout.php" method="post">
+    <input type="hidden" name="logout" value="true">
+    <button type="submit" class="logout">Logout</button>
+</form>

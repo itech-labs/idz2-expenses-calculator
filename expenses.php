@@ -64,6 +64,7 @@
 
     <div>
         <?php
+            include('logout.php');
             if (!empty($expenses)) {
                 echo "<h3>Total expenses: </h3>";
                 echo $totalAmount;
