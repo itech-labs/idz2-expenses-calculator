@@ -61,7 +61,7 @@
         <input type="number" min="0" name="expense_amount" placeholder="Expense amount" required>
         <button type="submit">Add Expense</button>
     </form>
-    <i class="fa-solid fa-right-from-bracket"></i>
+
     <div>
         <?php
             if (!empty($expenses)) {
