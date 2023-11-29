@@ -15,6 +15,11 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 350px;
+}
+
+h1 {
+    text-align: center;
 }
 
 form {
@@ -75,4 +80,12 @@ a:hover {
 .error {
     color: #ff0000;
     font-weight: bold;
+}
+
+.logout {
+    background-color: #ff0000;
+}
+
+.logout:hover {
+    background-color: #cc0000;
 }

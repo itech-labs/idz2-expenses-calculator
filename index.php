@@ -19,7 +19,7 @@
             if (isset($_SESSION['login'])) {
                 include('expenses.php');
                 echo '<form action="logout.php" method="post">';
-                echo '<button type="submit">Logout</button>';
+                echo '<button class="logout" type="submit">Logout</button>';
                 echo '</form>';
             } else {
                 if (isset($_GET['action']) && $_GET['action'] == 'register') {

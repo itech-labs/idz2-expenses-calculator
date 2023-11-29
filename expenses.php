@@ -57,7 +57,7 @@
 <div>
     <form action="expenses.php" method="post">
         <h3>Add Expense</h3>
-        <input type="text" name="expense_name" placeholder="Expense name" required>
+        <input type="text" name="expense_name" placeholder="Expense name" pattern="^(?! )[^\d]*(?<=\S)$" required>
         <input type="number" min="0" name="expense_amount" placeholder="Expense amount" required>
         <button type="submit">Add Expense</button>
     </form>
