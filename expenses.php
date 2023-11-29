@@ -13,6 +13,7 @@
         file_put_contents($file_name, $data, FILE_APPEND);
 
         header('Location: index.php');
+        exit;
     }
 
     function parseExpensesData($username) {
