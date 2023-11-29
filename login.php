@@ -35,20 +35,25 @@
 
             if (password_verify($enteredPassword, $storedPasswordHash)) {
                 $_SESSION['login'] = $enteredUsername;
-                header('Location: index.php');
-                exit;
             } else {
-                echo 'Invalid password';
+                $_SESSION['tmpMessage'] = 'Invalid password. Try again';
             }
         } else {
-            echo 'User not found';
+            $_SESSION['tmpMessage'] = 'User not found. Try again';
         }
-        
+        header('Location: index.php');
+        exit;
     }
 ?>
 
 <form action="login.php" method="post">
     <h2>Login</h2>
+    <?php 
+        if(isset($_SESSION['tmpMessage'])) {
+            echo "<p>{$_SESSION['tmpMessage']}</p> <br>";
+            unset($_SESSION['tmpMessage']);
+        }
+    ?>
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required>
     <label for="password">Password:</label>
