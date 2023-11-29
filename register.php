@@ -22,4 +22,5 @@
     <label for="password">Password:</label>
     <input type="password" name="password" id="password" required>
     <button type="submit">Register</button>
+    <a href="index.php">Back</a>
 </form>
