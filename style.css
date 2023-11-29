@@ -66,3 +66,13 @@ a {
 a:hover {
     color: #4caf50;
 }
+
+.success {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.error {
+    color: #ff0000;
+    font-weight: bold;
+}

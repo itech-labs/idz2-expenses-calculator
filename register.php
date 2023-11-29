@@ -6,12 +6,17 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $tmpMessageObj = new stdClass();
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $data = "$username,$hashed_password\n";
         file_put_contents('users_data.txt', $data, FILE_APPEND);
 
+        $tmpMessageObj->description = 'Registration was successful!';
+        $tmpMessageObj->type = 'success';
+        $_SESSION['tmpMessage'] = json_encode($tmpMessageObj);
         header('Location: index.php');
+        exit;
     }
 ?>
 

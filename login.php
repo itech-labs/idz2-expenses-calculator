@@ -29,6 +29,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $enteredUsername = $_POST['username'];
         $enteredPassword = $_POST['password'];
+        $tmpMessageObj = new stdClass();
 
         if (isset($usersData[$enteredUsername])){
             $storedPasswordHash = $usersData[$enteredUsername];
@@ -36,10 +37,14 @@
             if (password_verify($enteredPassword, $storedPasswordHash)) {
                 $_SESSION['login'] = $enteredUsername;
             } else {
-                $_SESSION['tmpMessage'] = 'Invalid password. Try again';
+                $tmpMessageObj->description = 'Invalid password. Try again';
+                $tmpMessageObj->type = 'error';
+                $_SESSION['tmpMessage'] = json_encode($tmpMessageObj);
             }
         } else {
-            $_SESSION['tmpMessage'] = 'User not found. Try again';
+            $tmpMessageObj->description = 'User not found. Try again';
+            $tmpMessageObj->type = 'error';
+            $_SESSION['tmpMessage'] = json_encode($tmpMessageObj);
         }
         header('Location: index.php');
         exit;
@@ -50,7 +55,14 @@
     <h2>Login</h2>
     <?php 
         if(isset($_SESSION['tmpMessage'])) {
-            echo "<p>{$_SESSION['tmpMessage']}</p> <br>";
+            $tmpMessageObj = json_decode($_SESSION['tmpMessage']);
+            if($tmpMessageObj->type == "error"){
+                echo "<p class='error'>";
+            } else {
+                echo "<p class='success'>";
+            }
+            echo "{$tmpMessageObj->description}</p> <br>";
+
             unset($_SESSION['tmpMessage']);
         }
     ?>
